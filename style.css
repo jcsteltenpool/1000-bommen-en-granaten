@@ -52,7 +52,7 @@ th, td {
     margin: auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .titel {
         font-size: 36px;
     }
@@ -89,7 +89,7 @@ th, td {
     background-color: rgb(0, 165, 0);
 }
 .plus:active {
-    border-color: white;
+    transform: scale(0.98);
 }
  
 .min {
@@ -100,7 +100,7 @@ th, td {
     background-color: red;
 }
 .min:active {
-    border-color: white;
+    transform: scale(0.98);
 }
 
 .bonus {
@@ -113,7 +113,7 @@ th, td {
     background-color: gold;
 }
 .bonus:active{
-    border-color:white;
+    transform: scale(0.98);
 }
 
 .speelmee {
@@ -124,6 +124,9 @@ th, td {
 .speelmee:hover {
     background-color: gold;
     color: black;
+}
+.speelmee:active {
+    transform: scale(0.98);
 }
 
 
@@ -138,5 +141,5 @@ th, td {
     border: 1px solid rgb(114, 114, 114);
 }
 #reset:active {
-    border-color:white;
+    transform: scale(0.98);
 }

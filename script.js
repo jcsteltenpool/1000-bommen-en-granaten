@@ -155,6 +155,7 @@ function plusBonusSpeler4() {
     document.getElementById("scoreSpeler4").innerHTML = counter4;
    }
 
+
 function resetScores() {
     counter1 = 0;
     counter2 = 0;
@@ -167,19 +168,4 @@ function resetScores() {
     document.getElementById("scoreSpeler4").innerHTML = counter4;
 }
 
-
-
-function speler1Min() {
-        var punten1 = document.querySelector("#scoreSpeler1");
-        punten1.style.backgroundColor = "rgb(255, 120, 120)";
-        punten1.style.color = "white";
-    }
-
-
-function speler1Wint() {
-    if (counter1 > 2000) {
-        var punten1 = document.querySelector("#scoreSpeler1");
-        punten1.style.backgroundColor = "gold";
-        punten1.style.color = "black";
-    }
-}
+ 
