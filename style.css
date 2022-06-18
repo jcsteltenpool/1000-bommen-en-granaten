@@ -6,7 +6,7 @@ body, html {
     background-size: cover;
     min-width: 100%;
     min-height: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -32,6 +32,17 @@ button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.button[disabled] {
+    background-color: rgb(193, 193, 193);
+    border: 1px solid rgb(193, 193, 193);
+    cursor: default;
+    filter: grayscale(100%);
+}
+
+.button[disabled]:hover {
+    background-color: rgb(193, 193, 193);
 }
 
    
@@ -69,18 +80,14 @@ th, td {
     margin-top: 20px;
 }
 
-.punten,
-#scoreSpeler1 {
+.punten {
     color: black;
     background-color: rgb(255, 235, 121);
     font-weight: bold;
     font-size: 18px;
 }
 
-.reset {
-    border-top: 2px solid goldenrod;
-}
-
+/* Plus button */
 .plus {
     background-color: rgb(85, 213, 85);
     border: 1px solid rgb(0, 165, 0);
@@ -92,6 +99,7 @@ th, td {
     transform: scale(0.98);
 }
  
+/* Min button */
 .min {
     background-color: rgb(255, 120, 120);
     border: 1px solid red;
@@ -103,6 +111,7 @@ th, td {
     transform: scale(0.98);
 }
 
+/* Bonus button */
 .bonus {
     background-color:rgb(255, 235, 121);
     border: 1px solid gold;
@@ -116,6 +125,7 @@ th, td {
     transform: scale(0.98);
 }
 
+/* Speel mee button */
 .speelmee {
     background-color: rgb(255, 235, 121);
     color: black;
@@ -129,17 +139,29 @@ th, td {
     transform: scale(0.98);
 }
 
+/* Reset button */
+.reset-row {
+    border-top: 2px solid goldenrod;
+}
+
+#reset[disabled] {
+    width: 100%;
+    margin: auto;
+    background-color: rgb(193, 193, 193);
+    cursor: default;
+}
 
 #reset {
     width: 100%;
     margin: auto;
-    background-color: rgb(193, 193, 193);
-    border: 1px solid rgb(193, 193, 193);
-}
-#reset:hover {
     background-color: rgb(114, 114, 114);
-    border: 1px solid rgb(114, 114, 114);
 }
 #reset:active {
-    transform: scale(0.98);
+    transform: scale(0.99);
 }
+
+
+
+/* .columnSpeler1{
+    color: rgb(193, 193, 193);
+} */
