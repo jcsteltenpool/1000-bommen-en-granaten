@@ -24,46 +24,92 @@ const plusDSpeler4Button = document.getElementById("+1000Speler4");
 const minDSpeler4Button = document.getElementById("-1000Speler4");
 const plusBonusSpeler4Button = document.getElementById("+500Speler4");
 
+// Score backgrounds
+const scoreBackGrSpeler1 = document.querySelector(".punten #scoreSpeler1");
+const scoreBackGrSpeler2 = document.querySelector(".punten #scoreSpeler2");
+const scoreBackGrSpeler3 = document.querySelector(".punten #scoreSpeler3");
+const scoreBackGrSpeler4 = document.querySelector(".punten #scoreSpeler4");
+
+
 // Players names
 const registerSpeler1 = () => {
     const speler1 = document.getElementById("speler1Input").value;
     document.getElementById("naamSpeler1").innerHTML = speler1;
+    
     plusHSpeler1Button.removeAttribute("disabled");
     minHSpeler1Button.removeAttribute("disabled");
     plusDSpeler1Button.removeAttribute("disabled");
     minDSpeler1Button.removeAttribute("disabled");
     plusBonusSpeler1Button.removeAttribute("disabled");
-    // columnSpeler1.removeAttribute("disabled");
+
+    const headerSpeler1 = document.querySelector("#headerSpeler1");
+    headerSpeler1.classList.remove("columnSpeler1");
+    const naamSpeler1 = document.querySelector("#naamSpeler1");
+    naamSpeler1.classList.remove("columnSpeler1");
+    const scoreSpeler1 = document.querySelector("#scoreSpeler1");
+    scoreSpeler1.classList.remove("columnSpeler1");
+    
+    scoreBackGrSpeler1.style.backgroundColor = ("rgb(155, 219, 253)");
 }
    
 const registerSpeler2 = () => {
     const speler2 = document.getElementById("speler2Input").value;
     document.getElementById("naamSpeler2").innerHTML = speler2;
+    
     plusHSpeler2Button.removeAttribute("disabled");
     minHSpeler2Button.removeAttribute("disabled");
     plusDSpeler2Button.removeAttribute("disabled");
     minDSpeler2Button.removeAttribute("disabled");
     plusBonusSpeler2Button.removeAttribute("disabled");
+
+    const headerSpeler2 = document.querySelector("#headerSpeler2");
+    headerSpeler2.classList.remove("columnSpeler2");
+    const naamSpeler2 = document.querySelector("#naamSpeler2");
+    naamSpeler2.classList.remove("columnSpeler2");
+    const scoreSpeler2 = document.querySelector("#scoreSpeler2");
+    scoreSpeler2.classList.remove("columnSpeler2");
+
+    scoreBackGrSpeler2.style.backgroundColor = ("rgb(155, 219, 253)");
 }
    
 const registerSpeler3 = () => {
     const speler3 = document.getElementById("speler3Input").value;
     document.getElementById("naamSpeler3").innerHTML = speler3;
+    
     plusHSpeler3Button.removeAttribute("disabled");
     minHSpeler3Button.removeAttribute("disabled");
     plusDSpeler3Button.removeAttribute("disabled");
     minDSpeler3Button.removeAttribute("disabled");
     plusBonusSpeler3Button.removeAttribute("disabled");
+
+    const headerSpeler3 = document.querySelector("#headerSpeler3");
+    headerSpeler3.classList.remove("columnSpeler3");
+    const naamSpeler3 = document.querySelector("#naamSpeler3");
+    naamSpeler3.classList.remove("columnSpeler3");
+    const scoreSpeler3 = document.querySelector("#scoreSpeler3");
+    scoreSpeler3.classList.remove("columnSpeler3");
+
+    scoreBackGrSpeler3.style.backgroundColor = ("rgb(155, 219, 253)");
 }
 
 const registerSpeler4 = () => {
     const speler4 = document.getElementById("speler4Input").value;
     document.getElementById("naamSpeler4").innerHTML = speler4;
+    
     plusHSpeler4Button.removeAttribute("disabled");
     minHSpeler4Button.removeAttribute("disabled");
     plusDSpeler4Button.removeAttribute("disabled");
     minDSpeler4Button.removeAttribute("disabled");
     plusBonusSpeler4Button.removeAttribute("disabled");
+
+    const headerSpeler4 = document.querySelector("#headerSpeler4");
+    headerSpeler4.classList.remove("columnSpeler4");
+    const naamSpeler4 = document.querySelector("#naamSpeler4");
+    naamSpeler4.classList.remove("columnSpeler4");
+    const scoreSpeler4 = document.querySelector("#scoreSpeler4");
+    scoreSpeler4.classList.remove("columnSpeler4");
+
+    scoreBackGrSpeler4.style.backgroundColor = ("rgb(155, 219, 253)");
 }
  
 // Counters display
@@ -217,5 +263,4 @@ function resetScores() {
 
     resetButton.setAttribute('disabled', true);
 }
-
  

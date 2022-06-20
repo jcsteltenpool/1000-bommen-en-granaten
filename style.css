@@ -82,7 +82,7 @@ th, td {
 
 .punten {
     color: black;
-    background-color: rgb(255, 235, 121);
+    background-color: rgb(193, 193, 193);
     font-weight: bold;
     font-size: 18px;
 }
@@ -161,7 +161,15 @@ th, td {
 }
 
 
+.columnSpeler1,
+.columnSpeler2,
+.columnSpeler3,
+.columnSpeler4 {
+    color: rgb(114, 114, 114);
+}
 
-/* .columnSpeler1{
-    color: rgb(193, 193, 193);
-} */
+.punten .columnSpeler1{
+    background-color: rgb(193, 193, 193);
+}
+
+/* rgb(255, 235, 121) */
