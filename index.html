@@ -50,63 +50,64 @@
                 </tr>
 
                 <tr class="punten">
-                    <td id="scoreSpeler1" class="columnSpeler1">0</td>
-                    <td id="scoreSpeler2" class="columnSpeler2">0</td>
-                    <td id="scoreSpeler3" class="columnSpeler3">0</td>
-                    <td id="scoreSpeler4" class="columnSpeler4">0</td>
+                    <td><input type="number" id="scoreSpeler1" class="columnSpeler1" value=0 readonly="true" disabled></td>
+                    <td><input type="number" id="scoreSpeler2" class="columnSpeler2" value=0 readonly="true" disabled></td>
+                    <td><input type="number" id="scoreSpeler3" class="columnSpeler3" value=0 readonly="true" disabled></td>
+                    <td><input type="number" id="scoreSpeler4" class="columnSpeler4" value=0 readonly="true" disabled></td>
                 </tr>
+
                 <!-- Plus en min 100 -->
                 <tr>
                     <td>
-                        <button class="button plus" id="+100Speler1" onclick="plusHSpeler1()" disabled>+ 100</button>
-                        <button class="button min" id="-100Speler1" onclick="minHSpeler1()" disabled>- 100</button>
+                        <button class="button plus" id="+100Speler1" disabled>+ 100</button>
+                        <button class="button min" id="-100Speler1" disabled>- 100</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+100Speler2" onclick="plusHSpeler2()" disabled>+ 100</button>
-                        <button class="button min" id="-100Speler2" onclick="minHSpeler2()" disabled>- 100</button>
+                        <button class="button plus" id="+100Speler2" disabled>+ 100</button>
+                        <button class="button min" id="-100Speler2" disabled>- 100</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+100Speler3" onclick="plusHSpeler3()" disabled>+ 100</button>
-                        <button class="button min" id="-100Speler3" onclick="minHSpeler3()" disabled>- 100</button>
+                        <button class="button plus" id="+100Speler3" disabled>+ 100</button>
+                        <button class="button min" id="-100Speler3" disabled>- 100</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+100Speler4" onclick="plusHSpeler4()" disabled>+ 100</button>
-                        <button class="button min" id="-100Speler4" onclick="minHSpeler4()" disabled>- 100</button>
+                        <button class="button plus" id="+100Speler4" disabled>+ 100</button>
+                        <button class="button min" id="-100Speler4" disabled>- 100</button>
                     </td>
                 </tr>
                 <!-- Plus en min 1000 -->
                 <tr>
                     <td>
-                        <button class="button plus" id="+1000Speler1" onclick="plusDSpeler1()" disabled>+ 1000</button>
-                        <button class="button min" id="-1000Speler1" onclick="minDSpeler1()" disabled>- 1000</button>
+                        <button class="button plus" id="+1000Speler1" disabled>+ 1000</button>
+                        <button class="button min" id="-1000Speler1" disabled>- 1000</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+1000Speler2" onclick="plusDSpeler2()" disabled>+ 1000</button>
-                        <button class="button min" id="-1000Speler2" onclick="minDSpeler2()" disabled>- 1000</button>
+                        <button class="button plus" id="+1000Speler2" disabled>+ 1000</button>
+                        <button class="button min" id="-1000Speler2" disabled>- 1000</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+1000Speler3" onclick="plusDSpeler3()" disabled>+ 1000</button>
-                        <button class="button min" id="-1000Speler3" onclick="minDSpeler3()" disabled>- 1000</button>
+                        <button class="button plus" id="+1000Speler3" disabled>+ 1000</button>
+                        <button class="button min" id="-1000Speler3" disabled>- 1000</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+1000Speler4" onclick="plusDSpeler4()" disabled>+ 1000</button>
-                        <button class="button min" id="-1000Speler4" onclick="minDSpeler4()" disabled>- 1000</button>
+                        <button class="button plus" id="+1000Speler4" disabled>+ 1000</button>
+                        <button class="button min" id="-1000Speler4" disabled>- 1000</button>
                     </td>
                 </tr>
                 <!-- Plus 500 -->
                 <tr>
-                    <td><button class="button bonus" id="+500Speler1" onclick="plusBonusSpeler1()" disabled>&#128081;</button></td>
-                    <td><button class="button bonus" id="+500Speler2" onclick="plusBonusSpeler2()" disabled>&#128081;</button></td>
-                    <td><button class="button bonus" id="+500Speler3" onclick="plusBonusSpeler3()" disabled>&#128081;</button></td>
-                    <td><button class="button bonus" id="+500Speler4" onclick="plusBonusSpeler4()" disabled>&#128081;</button></td>
+                    <td><button class="button bonus" id="+500Speler1" disabled>&#128081;</button></td>
+                    <td><button class="button bonus" id="+500Speler2" disabled>&#128081;</button></td>
+                    <td><button class="button bonus" id="+500Speler3" disabled>&#128081;</button></td>
+                    <td><button class="button bonus" id="+500Speler4" disabled>&#128081;</button></td>
                 </tr>
                 <!-- Reset button-->
                 <tr class="reset-row">
-                    <td colspan="4"><button id="reset" onclick="resetScores()" disabled>Reset</td>
+                    <td colspan="4"><button id="reset" disabled>Reset</td>
+
                 </tr>
         </table>
 
   <script src="script.js"></script>
-  <!-- <script src="test.js"></script> -->
  </body>
 </html>

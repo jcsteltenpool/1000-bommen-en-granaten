@@ -24,17 +24,18 @@ const plusDSpeler4Button = document.getElementById("+1000Speler4");
 const minDSpeler4Button = document.getElementById("-1000Speler4");
 const plusBonusSpeler4Button = document.getElementById("+500Speler4");
 
-// Score backgrounds
-const scoreBackGrSpeler1 = document.querySelector(".punten #scoreSpeler1");
-const scoreBackGrSpeler2 = document.querySelector(".punten #scoreSpeler2");
-const scoreBackGrSpeler3 = document.querySelector(".punten #scoreSpeler3");
-const scoreBackGrSpeler4 = document.querySelector(".punten #scoreSpeler4");
+// Scores
+const scoreSpeler1 = document.querySelector("#scoreSpeler1");
+const scoreSpeler2 = document.querySelector("#scoreSpeler2");
+const scoreSpeler3 = document.querySelector("#scoreSpeler3");
+const scoreSpeler4 = document.querySelector("#scoreSpeler4");
 
+const resetButton = document.getElementById("reset");
 
-// Players names
+// Registreer & activeer spelers
 const registerSpeler1 = () => {
     const speler1 = document.getElementById("speler1Input").value;
-    document.getElementById("naamSpeler1").innerHTML = speler1;
+    document.getElementById("naamSpeler1").innerText = speler1;
     
     plusHSpeler1Button.removeAttribute("disabled");
     minHSpeler1Button.removeAttribute("disabled");
@@ -46,10 +47,10 @@ const registerSpeler1 = () => {
     headerSpeler1.classList.remove("columnSpeler1");
     const naamSpeler1 = document.querySelector("#naamSpeler1");
     naamSpeler1.classList.remove("columnSpeler1");
-    const scoreSpeler1 = document.querySelector("#scoreSpeler1");
     scoreSpeler1.classList.remove("columnSpeler1");
+    scoreSpeler1.removeAttribute('disabled');
     
-    scoreBackGrSpeler1.style.backgroundColor = ("rgb(155, 219, 253)");
+    scoreSpeler1.style.backgroundColor = ("rgb(155, 219, 253)");
 }
    
 const registerSpeler2 = () => {
@@ -68,8 +69,10 @@ const registerSpeler2 = () => {
     naamSpeler2.classList.remove("columnSpeler2");
     const scoreSpeler2 = document.querySelector("#scoreSpeler2");
     scoreSpeler2.classList.remove("columnSpeler2");
+    scoreSpeler2.removeAttribute('disabled');
 
-    scoreBackGrSpeler2.style.backgroundColor = ("rgb(155, 219, 253)");
+
+    scoreSpeler2.style.backgroundColor = ("rgb(155, 219, 253)");
 }
    
 const registerSpeler3 = () => {
@@ -88,8 +91,9 @@ const registerSpeler3 = () => {
     naamSpeler3.classList.remove("columnSpeler3");
     const scoreSpeler3 = document.querySelector("#scoreSpeler3");
     scoreSpeler3.classList.remove("columnSpeler3");
+    scoreSpeler3.removeAttribute('disabled');
 
-    scoreBackGrSpeler3.style.backgroundColor = ("rgb(155, 219, 253)");
+    scoreSpeler3.style.backgroundColor = ("rgb(155, 219, 253)");
 }
 
 const registerSpeler4 = () => {
@@ -108,159 +112,335 @@ const registerSpeler4 = () => {
     naamSpeler4.classList.remove("columnSpeler4");
     const scoreSpeler4 = document.querySelector("#scoreSpeler4");
     scoreSpeler4.classList.remove("columnSpeler4");
+    scoreSpeler4.removeAttribute('disabled');
 
-    scoreBackGrSpeler4.style.backgroundColor = ("rgb(155, 219, 253)");
+    scoreSpeler4.style.backgroundColor = ("rgb(155, 219, 253)");
 }
- 
-// Counters display
-let counter1 = 0;
-let counter2 = 0;
-let counter3 = 0;
-let counter4 = 0;
 
-const counter1Display = document.getElementById("scoreSpeler1");
-const counter2Display = document.getElementById("scoreSpeler2");
-const counter3Display = document.getElementById("scoreSpeler3");
-const counter4Display = document.getElementById("scoreSpeler4");
-
-const resetButton = document.getElementById("reset");
   
-// Adding and subtracting 100 / 500 / 1000: PLAYER 1
-function plusHSpeler1() {
-    counter1 += 100;
-    counter1Display.innerText = counter1;
+// PLAYER 1
+plusHSpeler1Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
-   
-function minHSpeler1() {
-    counter1 -= 100;
-    counter1Display.innerText = counter1;
-    resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler1 = scoreSpeler1.valueAsNumber;
+    let updatedScoreSpeler1 = currentScoreSpeler1 + 100;
+    
+    scoreSpeler1.value = updatedScoreSpeler1;
+    
+    if (updatedScoreSpeler1 >= 6000) {
+        scoreSpeler1.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler1 >= 0) {
+        scoreSpeler1.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
 
-function plusDSpeler1() {
-    counter1 += 1000;
-    counter1Display.innerText = counter1;
+minHSpeler1Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
-   
-function minDSpeler1() {
-    counter1 -= 1000;
-    counter1Display.innerText = counter1;    
-    resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler1 = scoreSpeler1.valueAsNumber;
+    let updatedScoreSpeler1 = currentScoreSpeler1 - 100;
+    
+    scoreSpeler1.value = updatedScoreSpeler1;
+    
+    if (updatedScoreSpeler1 < 6000) {
+        scoreSpeler1.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+    if (updatedScoreSpeler1 < 0) {
+        scoreSpeler1.style.backgroundColor = ("rgb(255, 120, 120)");
+    };
+});
 
-function plusBonusSpeler1() {
-    counter1 += 500;
-    counter1Display.innerText = counter1;
+plusDSpeler1Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler1 = scoreSpeler1.valueAsNumber;
+    let updatedScoreSpeler1 = currentScoreSpeler1 + 1000;
+    
+    scoreSpeler1.value = updatedScoreSpeler1;
+    
+    if (updatedScoreSpeler1 >= 6000) {
+        scoreSpeler1.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler1 >= 0) {
+        scoreSpeler1.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
 
-// Adding and subtracting 100 / 500 / 1000: PLAYER 2
-function plusHSpeler2() {
-    counter2 += 100;
-    counter2Display.innerText = counter2;
+minDSpeler1Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
-   
-function minHSpeler2() {
-    counter2 -= 100;
-    counter2Display.innerText = counter2;
-    resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler1 = scoreSpeler1.valueAsNumber;
+    let updatedScoreSpeler1 = currentScoreSpeler1 - 1000;
+    
+    scoreSpeler1.value = updatedScoreSpeler1;
+    
+    if (updatedScoreSpeler1 < 6000) {
+        scoreSpeler1.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+    if (updatedScoreSpeler1 < 0) {
+        scoreSpeler1.style.backgroundColor = ("rgb(255, 120, 120)");
+    };
+});
 
-function plusDSpeler2() {
-    counter2 += 1000;
-    counter2Display.innerText = counter2;
+plusBonusSpeler1Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
-   
-function minDSpeler2() {
-    counter2 -= 1000;
-    counter2Display.innerText = counter2;
-    resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler1 = scoreSpeler1.valueAsNumber;
+    let updatedScoreSpeler1 = currentScoreSpeler1 + 500;
+    
+    scoreSpeler1.value = updatedScoreSpeler1;
+    
+    if (updatedScoreSpeler1 >= 6000) {
+        scoreSpeler1.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler1 >= 0) {
+        scoreSpeler1.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
 
-function plusBonusSpeler2() {
-    counter2 += 500;
-    counter2Display.innerText = counter2;
-    resetButton.removeAttribute('disabled');
-}
 
-// Adding and subtracting 100 / 500 / 1000: PLAYER 3
-function plusHSpeler3() {
-    counter3 += 100;
-    counter3Display.innerText = counter3;
+// PLAYER 2
+plusHSpeler2Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
-   
-function minHSpeler3() {
-    counter3 -= 100;
-    counter3Display.innerText = counter3;
-    resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler2 = scoreSpeler2.valueAsNumber;
+    let updatedScoreSpeler2 = currentScoreSpeler2 + 100;
+    
+    scoreSpeler2.value = updatedScoreSpeler2;
+    
+    if (updatedScoreSpeler2 >= 6000) {
+        scoreSpeler2.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler2 >= 0) {
+        scoreSpeler2.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
 
-function plusDSpeler3() {
-    counter3 += 1000;
-    counter3Display.innerText = counter3;
+minHSpeler2Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
-   
-function minDSpeler3() {
-    counter3 -= 1000;
-    counter3Display.innerText = counter3;
-    resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler2 = scoreSpeler2.valueAsNumber;
+    let updatedScoreSpeler2 = currentScoreSpeler2 - 100;
+    
+    scoreSpeler2.value = updatedScoreSpeler2;
+    
+    if (updatedScoreSpeler2 < 6000) {
+        scoreSpeler2.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+    if (updatedScoreSpeler2 < 0) {
+        scoreSpeler2.style.backgroundColor = ("rgb(255, 120, 120)");
+    };
+});
 
-function plusBonusSpeler3() {
-    counter3 += 500;
-    counter3Display.innerText = counter3;
+plusDSpeler2Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler2 = scoreSpeler2.valueAsNumber;
+    let updatedScoreSpeler2 = currentScoreSpeler2 + 1000;
+    
+    scoreSpeler2.value = updatedScoreSpeler2;
+    
+    if (updatedScoreSpeler2 >= 6000) {
+        scoreSpeler2.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler2 >= 0) {
+        scoreSpeler2.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
 
-// Adding and subtracting 100 / 500 / 1000: PLAYER 4
-function plusHSpeler4() {
-    counter4 += 100;
-    counter4Display.innerText = counter4;
+minDSpeler2Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
-   
-function minHSpeler4() {
-    counter4 -= 100;
-    counter4Display.innerText = counter4;
-    resetButton.removeAttribute('disabled');
-}   
+    let currentScoreSpeler2 = scoreSpeler2.valueAsNumber;
+    let updatedScoreSpeler2 = currentScoreSpeler2 - 1000;
+    
+    scoreSpeler2.value = updatedScoreSpeler2;
+    
+    if (updatedScoreSpeler2 < 6000) {
+        scoreSpeler2.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+    if (updatedScoreSpeler2 < 0) {
+        scoreSpeler2.style.backgroundColor = ("rgb(255, 120, 120)");
+    };
+});
 
-function plusDSpeler4() {
-    counter4 += 1000;
-    counter4Display.innerText = counter4;
+plusBonusSpeler2Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
-   
-function minDSpeler4() {
-    counter4 -= 1000;
-    counter4Display.innerText = counter4;
+    let currentScoreSpeler2 = scoreSpeler2.valueAsNumber;
+    let updatedScoreSpeler2 = currentScoreSpeler2 + 500;
+    
+    scoreSpeler2.value = updatedScoreSpeler2;
+    
+    if (updatedScoreSpeler2 >= 6000) {
+        scoreSpeler2.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler1 >= 0) {
+        scoreSpeler2.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
+
+// PLAYER 3
+plusHSpeler3Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler3 = scoreSpeler3.valueAsNumber;
+    let updatedScoreSpeler3 = currentScoreSpeler3 + 100;
+    
+    scoreSpeler3.value = updatedScoreSpeler3;
+    
+    if (updatedScoreSpeler3 >= 6000) {
+        scoreSpeler3.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler3 >= 0) {
+        scoreSpeler3.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
 
-function plusBonusSpeler4() {
-    counter4 += 500;
-    counter4Display.innerText = counter4;
+minHSpeler3Button.addEventListener('click', () => {
     resetButton.removeAttribute('disabled');
-}
+    let currentScoreSpeler3 = scoreSpeler3.valueAsNumber;
+    let updatedScoreSpeler3 = currentScoreSpeler3 - 100;
+    
+    scoreSpeler3.value = updatedScoreSpeler3;
+    
+    if (updatedScoreSpeler3 < 6000) {
+        scoreSpeler3.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+    if (updatedScoreSpeler3 < 0) {
+        scoreSpeler3.style.backgroundColor = ("rgb(255, 120, 120)");
+    };
+});
 
-// Reset scores
-function resetScores() {
-    counter1 = 0;
-    counter2 = 0;
-    counter3 = 0;
-    counter4 = 0;
-   
-    counter1Display.innerText = counter4;
-    counter2Display.innerText = counter4;
-    counter3Display.innerText = counter4;
-    counter4Display.innerText = counter4;
+plusDSpeler3Button.addEventListener('click', () => {
+    resetButton.removeAttribute('disabled');
+    let currentScoreSpeler3 = scoreSpeler3.valueAsNumber;
+    let updatedScoreSpeler3 = currentScoreSpeler3 + 1000;
+    
+    scoreSpeler3.value = updatedScoreSpeler3;
+    
+    if (updatedScoreSpeler3 >= 6000) {
+        scoreSpeler3.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler3 >= 0) {
+        scoreSpeler3.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
 
-    resetButton.setAttribute('disabled', true);
-}
+minDSpeler3Button.addEventListener('click', () => {
+    resetButton.removeAttribute('disabled');
+    let currentScoreSpeler3 = scoreSpeler3.valueAsNumber;
+    let updatedScoreSpeler3 = currentScoreSpeler3 - 1000;
+    
+    scoreSpeler3.value = updatedScoreSpeler3;
+    
+    if (updatedScoreSpeler3 < 6000) {
+        scoreSpeler3.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+    if (updatedScoreSpeler3 < 0) {
+        scoreSpeler3.style.backgroundColor = ("rgb(255, 120, 120)");
+    };
+});
+
+plusBonusSpeler3Button.addEventListener('click', () => {
+    resetButton.removeAttribute('disabled');
+    let currentScoreSpeler3 = scoreSpeler3.valueAsNumber;
+    let updatedScoreSpeler3 = currentScoreSpeler3 + 500;
+    
+    scoreSpeler3.value = updatedScoreSpeler3;
+    
+    if (updatedScoreSpeler3 >= 6000) {
+        scoreSpeler3.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler3 >= 0) {
+        scoreSpeler3.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
+
+// PLAYER 4
+plusHSpeler4Button.addEventListener('click', () => {
+    resetButton.removeAttribute('disabled');
+    let currentScoreSpeler4 = scoreSpeler4.valueAsNumber;
+    let updatedScoreSpeler4 = currentScoreSpeler4 + 100;
+    
+    scoreSpeler4.value = updatedScoreSpeler4;
+    
+    if (updatedScoreSpeler4 >= 6000) {
+        scoreSpeler4.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler4 >= 0) {
+        scoreSpeler4.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
+
+minHSpeler4Button.addEventListener('click', () => {
+    resetButton.removeAttribute('disabled');
+    let currentScoreSpeler4 = scoreSpeler4.valueAsNumber;
+    let updatedScoreSpeler4 = currentScoreSpeler4 - 100;
+    
+    scoreSpeler4.value = updatedScoreSpeler4;
+    
+    if (updatedScoreSpeler4 < 6000) {
+        scoreSpeler4.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+    if (updatedScoreSpeler4 < 0) {
+        scoreSpeler4.style.backgroundColor = ("rgb(255, 120, 120)");
+    };
+});
+
+plusDSpeler4Button.addEventListener('click', () => {
+    resetButton.removeAttribute('disabled');
+    let currentScoreSpeler4 = scoreSpeler4.valueAsNumber;
+    let updatedScoreSpeler4 = currentScoreSpeler4 + 1000;
+    
+    scoreSpeler4.value = updatedScoreSpeler4;
+    
+    if (updatedScoreSpeler4 >= 6000) {
+        scoreSpeler4.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler4 >= 0) {
+        scoreSpeler4.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
+
+minDSpeler4Button.addEventListener('click', () => {
+    resetButton.removeAttribute('disabled');
+    let currentScoreSpeler4 = scoreSpeler4.valueAsNumber;
+    let updatedScoreSpeler4 = currentScoreSpeler4 - 1000;
+    
+    scoreSpeler4.value = updatedScoreSpeler4;
+    
+    if (updatedScoreSpeler4 < 6000) {
+        scoreSpeler4.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+    if (updatedScoreSpeler4 < 0) {
+        scoreSpeler4.style.backgroundColor = ("rgb(255, 120, 120)");
+    };
+});
+
+plusBonusSpeler4Button.addEventListener('click', () => {
+    resetButton.removeAttribute('disabled');
+    let currentScoreSpeler4 = scoreSpeler4.valueAsNumber;
+    let updatedScoreSpeler4 = currentScoreSpeler4 + 500;
+    
+    scoreSpeler4.value = updatedScoreSpeler4;
+    
+    if (updatedScoreSpeler4 >= 6000) {
+        scoreSpeler4.style.backgroundColor = ("rgb(255, 215, 0)");
+    } else if (updatedScoreSpeler4 >= 0) {
+        scoreSpeler4.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+});
+
  
+resetButton.addEventListener('click', () => {
+    resetButton.setAttribute('disabled', true);
+    
+    if (scoreSpeler1.disabled) {
+        scoreSpeler1.style.backgroundColor = ("rgb(193, 193, 193)");
+    } else {
+        scoreSpeler1.value = 0;
+        scoreSpeler1.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+
+    if (scoreSpeler2.disabled) {
+        scoreSpeler2.style.backgroundColor = ("rgb(193, 193, 193)");
+    } else {
+        scoreSpeler2.value = 0;
+        scoreSpeler2.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+
+    if (scoreSpeler3.disabled) {
+        scoreSpeler3.style.backgroundColor = ("rgb(193, 193, 193)");
+    } else {
+        scoreSpeler3.value = 0;
+        scoreSpeler3.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+
+    if (scoreSpeler4.disabled) {
+        scoreSpeler4.style.backgroundColor = ("rgb(193, 193, 193)");
+    } else {
+        scoreSpeler4.value = 0;
+        scoreSpeler4.style.backgroundColor = ("rgb(155, 219, 253)");
+    };
+})
+
