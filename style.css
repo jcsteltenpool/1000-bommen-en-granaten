@@ -1,6 +1,7 @@
 body, html {
     text-align: center;
     font-family: 'Arial';
+    font-size: 16px;
     background: linear-gradient(red, gold);
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,7 +12,7 @@ body, html {
 }
 
 header {
-    padding-top: 1rem;
+    padding-top: clamp(.1rem, 0vw, 1rem);
 }
 
 h1 {
@@ -23,7 +24,7 @@ h1 {
 }
 
 input {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 10px;
     border-radius: 5px;
 }
@@ -67,20 +68,27 @@ th, td {
     margin: auto;
 }
 
+.duizend {
+    width: 100%;
+}
+
 .een {
-    font-size: 64px;
+    font-size: clamp(3rem, 10vw, 6rem);
 }
 
 .bommen {
-    margin-right: 0.4em;
+    font-size: clamp(2rem, 8vw, 4rem);
+    /* margin-right: 0.3em; */
 }
 
 .titel {
     font-family: 'Sorts Mill Goudy', serif;
     font-variant: small-caps;
+    font-size: clamp(1rem, 9vw, 4rem);
+    padding: 0 1rem;
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
     .titel {
         font-size: 36px;
     }
@@ -90,7 +98,7 @@ th, td {
     .titel {
         font-size: 10vw;
     }
-}
+} */
 
 .spelers {
     margin-top: 20px;
@@ -187,7 +195,6 @@ input[type=number]::-webkit-inner-spin-button {
 #reset:active {
     transform: scale(0.99);
 }
-
 
 .columnSpeler1,
 .columnSpeler2,
