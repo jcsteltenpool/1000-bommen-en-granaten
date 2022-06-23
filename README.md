@@ -8,4 +8,4 @@ speel mee --- join in / play along <br>
 naamSpeler --- name player<br>
 punten --- points
 
-Visit the app here: <a href="jcsteltenpool.github.io/1000-bommen-en-granaten" target="_blank">jcsteltenpool.github.io/1000-bommen-en-granaten</a>
+Visit the app here: <a href="jcsteltenpool.github.io/1000-bommen-en-granaten/" target="_blank">jcsteltenpool.github.io/1000-bommen-en-granaten/</a>
