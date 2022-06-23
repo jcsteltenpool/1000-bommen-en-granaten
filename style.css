@@ -10,8 +10,12 @@ body, html {
     padding: 0;
 }
 
+header {
+    padding-top: 1rem;
+}
+
 h1 {
-    font-size: 48px;
+    font-size: 64px;
     display: inline-block;
     font-family: cursive;
     line-height: 0em;
@@ -84,7 +88,7 @@ th, td {
 
 @media (max-width: 342px) {
     .titel {
-        font-size: 24px;
+        font-size: 10vw;
     }
 }
 
