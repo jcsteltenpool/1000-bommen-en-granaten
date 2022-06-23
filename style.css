@@ -15,7 +15,7 @@ h1 {
     display: inline-block;
     font-family: cursive;
     line-height: 0em;
-    text-shadow: 0 0 4px yellow;
+    text-shadow: 0 0 5px yellow;
 }
 
 input {
