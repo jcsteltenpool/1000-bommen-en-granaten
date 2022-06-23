@@ -76,6 +76,11 @@ th, td {
     margin-right: 0.4em;
 }
 
+.titel {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-variant: small-caps;
+}
+
 .spelers {
     margin-top: 20px;
 }
