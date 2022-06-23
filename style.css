@@ -19,7 +19,7 @@ h1 {
     font-size: 64px;
     display: inline-block;
     font-family: cursive;
-    line-height: 0em;
+    line-height: 1rem;
     text-shadow: 0 0 5px yellow;
 }
 
@@ -74,11 +74,12 @@ th, td {
 
 .een {
     font-size: clamp(3rem, 10vw, 6rem);
+    padding-left: 1rem;
 }
 
 .bommen {
     font-size: clamp(2rem, 8vw, 4rem);
-    /* margin-right: 0.3em; */
+    padding-right: 1rem;
 }
 
 .titel {
@@ -87,18 +88,6 @@ th, td {
     font-size: clamp(1rem, 9vw, 4rem);
     padding: 0 1rem;
 }
-
-/* @media (max-width: 500px) {
-    .titel {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 342px) {
-    .titel {
-        font-size: 10vw;
-    }
-} */
 
 .spelers {
     margin-top: 20px;
