@@ -63,11 +63,6 @@ th, td {
     margin: auto;
 }
 
-@media (max-width: 500px) {
-    .titel {
-        font-size: 36px;
-    }
-}
 .een {
     font-size: 64px;
 }
@@ -79,6 +74,18 @@ th, td {
 .titel {
     font-family: 'Sorts Mill Goudy', serif;
     font-variant: small-caps;
+}
+
+@media (max-width: 500px) {
+    .titel {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 342px) {
+    .titel {
+        font-size: 24px;
+    }
 }
 
 .spelers {
