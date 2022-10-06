@@ -46,7 +46,7 @@ function unlockPlayer(i) {
     let bonus = document.getElementsByClassName("bonus")[i];
     const allButtons = [scorePlayer, plus100, min100, plus1000, min1000, bonus];
     allButtons.forEach((button) => {
-        button.disabled = !button.disabled;
+        button.removeAttribute('disabled');
     });
 };
 
