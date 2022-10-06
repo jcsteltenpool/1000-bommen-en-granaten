@@ -13,15 +13,19 @@ const unlockPlayer4 = document.querySelector("#unlockPlayer4");
 
 unlockPlayer1.addEventListener('click', function() {
     unlockPlayer(0);
+    buttonTextChange(0);
 });
 unlockPlayer2.addEventListener('click', function() {
     unlockPlayer(1);
+    buttonTextChange(1);
 });
 unlockPlayer3.addEventListener('click', function() {
     unlockPlayer(2);
+    buttonTextChange(2);
 });
 unlockPlayer4.addEventListener('click', function() {
     unlockPlayer(3);
+    buttonTextChange(3);
 });
 
 function unlockPlayer(i) {
@@ -48,6 +52,18 @@ function unlockPlayer(i) {
     allButtons.forEach((button) => {
         button.removeAttribute('disabled');
     });
+};
+
+let newButtonTexts = ["Aaarghh!", "Schip ahoy!", "Yo ho ho!", "Enteren!", "Ahoy!"]
+
+function textSelector() {
+    let randomText = Math.floor(Math.random() * newButtonTexts.length);
+    return newButtonTexts[randomText];
+};
+
+function buttonTextChange(i) {
+    let joinedPlayer = document.getElementsByClassName("join")[i];
+    joinedPlayer.innerHTML = textSelector();
 };
 
 // Change score
