@@ -11,10 +11,6 @@ body, html {
     padding: 0;
 }
 
-/* header {
-    padding-top: clamp(.1rem, 0vw, 1rem);
-} */
-
 h1 {
     font-size: 64px;
     display: inline-block;
@@ -53,7 +49,7 @@ button {
    
 table {
     display: inline-block;
-    margin: 30px auto 0 auto;
+    margin: 30px 10px 0 10px;
     border: 2px solid goldenrod;
     border-right: 0;
     background-color: white;
@@ -68,59 +64,19 @@ th, td {
     margin: auto;
 }
 
-.bommen-logo {
+.bombsLogo {
     width: min(432px, 70%);
 }
 
-/* 
-.duizend {
-    width: 100%;
-}
-
-.een {
-    font-size: clamp(2rem, 10vw, 5rem);
-    padding-left: 1rem;
-    position: relative;
-    top: 0.45rem;
-    margin-bottom: 0;
-}
-
-.bommen {
-    font-size: clamp(2rem, 8vw, 4rem);
-    padding-right: 1rem;
-}
-
-.titel {
-    font-family: 'Sorts Mill Goudy', serif;
-    font-variant: small-caps;
-    font-size: clamp(1rem, 9vw, 4rem);
-    padding: 0 1rem;
-    margin: 1rem 0;
-} */
-
-/* @media only screen and (max-width: 600px) {
-    .een {
-        top: 0.3rem;
-    }
-}
-
-@media only screen and (max-width: 425px) {
-    .een {
-        top: 0.2rem;
-    }
-    .bommen {
-        margin-bottom: 1rem;
-    }
-} */
-.spelers {
+.players {
     margin-top: 20px;
 }
-
 
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-.punten input {
+
+.score input {
     border: none;
     text-align: center;
     border-radius: 0;
@@ -131,38 +87,41 @@ input[type=number]::-webkit-inner-spin-button {
     box-sizing: border-box;
 }
 
-.punten td {
+.score td {
     padding: 0;
 }
 
-.columnSpeler1,
-.columnSpeler2,
-.columnSpeler3,
-.columnSpeler4 {
+.disabled {
     color: rgb(114, 114, 114);
 }
 
 /* Plus button */
-.plus {
+.plus100,
+.plus1000 {
     background-color: rgb(85, 213, 85);
     border: 1px solid rgb(0, 165, 0);
 }
-.plus:hover {
+.plus100:hover,
+.plus1000:hover {
     background-color: rgb(0, 165, 0);
 }
-.plus:active {
+.plus100:active,
+.plus1000:active {
     transform: scale(0.98);
 }
  
 /* Min button */
-.min {
+.min100,
+.min1000 {
     background-color: rgb(255, 120, 120);
     border: 1px solid red;
 }
-.min:hover {
+.min100:hover,
+.min1000:hover {
     background-color: red;
 }
-.min:active {
+.min100:active,
+.min1000:active {
     transform: scale(0.98);
 }
 
@@ -181,16 +140,16 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 /* Speel mee button */
-.speelmee {
+.join {
     background-color: rgb(255, 235, 121);
     color: black;
     border: 1px solid gold;
 }
-.speelmee:hover {
+.join:hover {
     background-color: gold;
     color: black;
 }
-.speelmee:active {
+.join:active {
     transform: scale(0.98);
 }
 

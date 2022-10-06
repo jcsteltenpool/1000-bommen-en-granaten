@@ -10,103 +10,111 @@
     <body>
         <header>
             <a href="https://www.999games.nl/duizend-bommen-en-granaten-dobbelspel.html" target="_blank" title="Ga naar de website van het spel">
-                <img class="bommen-logo" src="./1000_bommen_logo.png" alt="1000 Bommen & Granaten!">
+                <img class="bombsLogo" src="./1000_bommen_logo.png" alt="1000 Bommen & Granaten!">
             </a> 
         </header>
   
         <section>
-            <div class="spelers">
-                <input id="speler1Input" type="text" placeholder="Speler 1">
-                <button class="speelmee" type="submit" onclick="registerSpeler1()">Speel mee!</button>
+            <div class="players">
+                <input class="playerNameInput" type="text" placeholder="Player 1">
+                <button id="unlockPlayer1" class="join" type="submit">Speel mee!</button>
             </div>
             <br>
             <div>
-                <input id="speler2Input" type="text" placeholder="Speler 2">
-                <button class="speelmee" type="submit" onclick="registerSpeler2()">Speel mee!</button>
+                <input class="playerNameInput" type="text" placeholder="Player 2">
+                <button id="unlockPlayer2" class="join" type="submit">Speel mee!</button>
             </div>
             <br>
             <div>
-                <input id="speler3Input" type="text" placeholder="Speler 3">
-                <button class="speelmee" type="submit" onclick="registerSpeler3()">Speel mee!</button>
+                <input class="playerNameInput" type="text" placeholder="Player 3">
+                <button id="unlockPlayer3" class="join" type="submit">Speel mee!</button>
             </div>
             <br>
             <div>
-                <input id="speler4Input" type="text" placeholder="Speler 4">
-                <button class="speelmee" type="submit" onclick="registerSpeler4()">Speel mee!</button>
+                <input class="playerNameInput" type="text" placeholder="Player 4">
+                <button id="unlockPlayer4" class="join" type="submit">Speel mee!</button>
             </div>
         </section>
 
-        <table>
+        <table> 
+                <!-- Naam en score -->
                 <tr>
-                    <th id="headerSpeler1" class="columnSpeler1">Speler 1</th>
-                    <th id="headerSpeler2" class="columnSpeler2">Speler 2</th>
-                    <th id="headerSpeler3" class="columnSpeler3">Speler 3</th>
-                    <th id="headerSpeler4" class="columnSpeler4">Speler 4</th>
+                    <th class="headerPlayer disabled">Speler 1</th>
+                    <th class="headerPlayer disabled">Speler 2</th>
+                    <th class="headerPlayer disabled">Speler 3</th>
+                    <th class="headerPlayer disabled">Speler 4</th>
                 </tr>
             
-                <tr class="namen">
-                    <td id="naamSpeler1" class="columnSpeler1">geen speler</td>
-                    <td id="naamSpeler2" class="columnSpeler2">geen speler</td>
-                    <td id="naamSpeler3" class="columnSpeler3">geen speler</td>
-                    <td id="naamSpeler4" class="columnSpeler4">geen speler</td>
+                <tr class="names">
+                    <td class="namePlayer disabled">geen speler</td>
+                    <td class="namePlayer disabled">geen speler</td>
+                    <td class="namePlayer disabled">geen speler</td>
+                    <td class="namePlayer disabled">geen speler</td>
                 </tr>
 
-                <tr class="punten">
-                    <td><input type="number" id="scoreSpeler1" class="columnSpeler1" value=0 readonly="true" disabled></td>
-                    <td><input type="number" id="scoreSpeler2" class="columnSpeler2" value=0 readonly="true" disabled></td>
-                    <td><input type="number" id="scoreSpeler3" class="columnSpeler3" value=0 readonly="true" disabled></td>
-                    <td><input type="number" id="scoreSpeler4" class="columnSpeler4" value=0 readonly="true" disabled></td>
+                <tr class="score">
+                    <td><input type="number" class="scorePlayer" value=0 readonly="true" disabled></td>
+                    <td><input type="number" class="scorePlayer" value=0 readonly="true" disabled></td>
+                    <td><input type="number" class="scorePlayer" value=0 readonly="true" disabled></td>
+                    <td><input type="number" class="scorePlayer" value=0 readonly="true" disabled></td>
                 </tr>
 
                 <!-- Plus en min 100 -->
                 <tr>
                     <td>
-                        <button class="button plus" id="+100Speler1" disabled>+ 100</button>
-                        <button class="button min" id="-100Speler1" disabled>- 100</button>
+                        <button class="button plus100" id="plus100Player1" disabled>+ 100</button>
+                        <button class="button min100" id="min100Player1" disabled>- 100</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+100Speler2" disabled>+ 100</button>
-                        <button class="button min" id="-100Speler2" disabled>- 100</button>
+                        <button class="button plus100" id="plus100Player2" disabled>+ 100</button>
+                        <button class="button min100" id="min100Player2" disabled>- 100</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+100Speler3" disabled>+ 100</button>
-                        <button class="button min" id="-100Speler3" disabled>- 100</button>
+                        <button class="button plus100" id="plus100Player3" disabled>+ 100</button>
+                        <button class="button min100" id="min100Player3" disabled>- 100</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+100Speler4" disabled>+ 100</button>
-                        <button class="button min" id="-100Speler4" disabled>- 100</button>
+                        <button class="button plus100" id="plus100Player4" disabled>+ 100</button>
+                        <button class="button min100" id="min100Player4" disabled>- 100</button>
                     </td>
                 </tr>
                 <!-- Plus en min 1000 -->
                 <tr>
                     <td>
-                        <button class="button plus" id="+1000Speler1" disabled>+ 1000</button>
-                        <button class="button min" id="-1000Speler1" disabled>- 1000</button>
+                        <button class="button plus1000" id="plus1000Player1" disabled>+ 1000</button>
+                        <button class="button min1000" id="min1000Player1" disabled>- 1000</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+1000Speler2" disabled>+ 1000</button>
-                        <button class="button min" id="-1000Speler2" disabled>- 1000</button>
+                        <button class="button plus1000" id="plus1000Player2" disabled>+ 1000</button>
+                        <button class="button min1000" id="min1000Player2" disabled>- 1000</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+1000Speler3" disabled>+ 1000</button>
-                        <button class="button min" id="-1000Speler3" disabled>- 1000</button>
+                        <button class="button plus1000" id="plus1000Player3" disabled>+ 1000</button>
+                        <button class="button min1000" id="min1000Player3" disabled>- 1000</button>
                     </td>
                     <td>
-                        <button class="button plus" id="+1000Speler4" disabled>+ 1000</button>
-                        <button class="button min" id="-1000Speler4" disabled>- 1000</button>
+                        <button class="button plus1000" id="plus1000Player4" disabled>+ 1000</button>
+                        <button class="button min1000" id="min1000Player4" disabled>- 1000</button>
                     </td>
                 </tr>
                 <!-- Plus 500 -->
                 <tr>
-                    <td><button class="button bonus" id="+500Speler1" disabled>&#128081;</button></td>
-                    <td><button class="button bonus" id="+500Speler2" disabled>&#128081;</button></td>
-                    <td><button class="button bonus" id="+500Speler3" disabled>&#128081;</button></td>
-                    <td><button class="button bonus" id="+500Speler4" disabled>&#128081;</button></td>
+                    <td>
+                        <button class="button bonus" id="plus500Player1" disabled>&#128081;</button>
+                    </td>
+                    <td>
+                        <button class="button bonus" id="plus500Player2" disabled>&#128081;</button>
+                    </td>
+                    <td>
+                        <button class="button bonus" id="plus500Player3" disabled>&#128081;</button>
+                    </td>
+                    <td>
+                        <button class="button bonus" id="plus500Player4" disabled>&#128081;</button>
+                    </td>
                 </tr>
                 <!-- Reset button-->
                 <tr class="reset-row">
-                    <td colspan="4"><button id="reset" disabled>Reset</td>
-
+                    <td colspan="4"><button id="reset" disabled>Reset</button></td>
                 </tr>
         </table>
         <footer>
