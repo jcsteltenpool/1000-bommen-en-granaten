@@ -14,25 +14,98 @@
             </a> 
         </header>
   
-        <section>
-            <div class="players">
+        <section class="unlockPlayers-container">
+            <div>
                 <input class="playerNameInput" type="text" placeholder="Speler 1">
                 <button id="unlockPlayer1" class="join" type="submit">Speel mee!</button>
             </div>
-            <br>
             <div>
                 <input class="playerNameInput" type="text" placeholder="Speler 2">
                 <button id="unlockPlayer2" class="join" type="submit">Speel mee!</button>
             </div>
-            <br>
-            <div>
+            <div id="inputPlayer3">
                 <input class="playerNameInput" type="text" placeholder="Speler 3">
                 <button id="unlockPlayer3" class="join" type="submit">Speel mee!</button>
             </div>
-            <br>
-            <div>
+            <div id="inputPlayer4">
                 <input class="playerNameInput" type="text" placeholder="Speler 4">
                 <button id="unlockPlayer4" class="join" type="submit">Speel mee!</button>
+            </div>
+
+        </section>
+
+        <section class="scoreboard-container">
+            <div class="score-grid">
+                <div class="player-container player1">
+                    <h3 class="headerPlayer disabled">Speler 1</h3>
+                    <p class="namePlayer disabled">geen speler</p>
+                    <input type="number" class="scorePlayer" value=0 readonly="true" disabled>
+                    <div class="button-container">
+                        <button class="button plus100" id="plus100Player1" disabled>+ 100</button>
+                        <button class="button min100" id="min100Player1" disabled>- 100</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="button plus1000" id="plus1000Player1" disabled>+ 1000</button>
+                        <button class="button min1000" id="min1000Player1" disabled>- 1000</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="button bonus" id="plus500Player1" disabled>&#128081;</button>
+                    </div>
+                </div>
+
+                <div class="player-container player2">
+                    <h3 class="headerPlayer disabled">Speler 2</h3>
+                    <p class="namePlayer disabled">geen speler</p>
+                    <input type="number" class="scorePlayer" value=0 readonly="true" disabled>
+                    <div class="button-container">
+                        <button class="button plus100" id="plus100Player2" disabled>+ 100</button>
+                        <button class="button min100" id="min100Player2" disabled>- 100</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="button plus1000" id="plus1000Player2" disabled>+ 1000</button>
+                        <button class="button min1000" id="min1000Player2" disabled>- 1000</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="button bonus" id="plus500Player2" disabled>&#128081;</button>
+                    </div>
+                </div>
+
+                <div class="player-container player3">
+                    <h3 class="headerPlayer disabled">Speler 3</h3>
+                    <p class="namePlayer disabled">geen speler</p>
+                    <input type="number" class="scorePlayer" value=0 readonly="true" disabled>
+                    <div class="button-container">
+                        <button class="button plus100" id="plus100Player3" disabled>+ 100</button>
+                        <button class="button min100" id="min100Player3" disabled>- 100</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="button plus1000" id="plus1000Player3" disabled>+ 1000</button>
+                        <button class="button min1000" id="min1000Player3" disabled>- 1000</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="button bonus" id="plus500Player3" disabled>&#128081;</button>
+                    </div>
+                </div>
+
+                <div class="player-container player4">
+                    <h3 class="headerPlayer disabled">Speler 4</h3>
+                    <p class="namePlayer disabled">geen speler</p>
+                    <input type="number" class="scorePlayer" value=0 readonly="true" disabled>
+                    <div class="button-container">
+                        <button class="button plus100" id="plus100Player4" disabled>+ 100</button>
+                        <button class="button min100" id="min100Player4" disabled>- 100</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="button plus1000" id="plus1000Player4" disabled>+ 1000</button>
+                        <button class="button min1000" id="min1000Player4" disabled>- 1000</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="button bonus" id="plus500Player4" disabled>&#128081;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="reset-container">
+                <button id="resetButton" disabled>Reset</button>
             </div>
         </section>
 
@@ -114,7 +187,7 @@
                 </tr>
                 <!-- Reset button-->
                 <tr class="reset-row">
-                    <td colspan="4"><button id="reset" disabled>Reset</button></td>
+                    <td colspan="4"><button id="resetButton" disabled>Reset</button></td>
                 </tr>
         </table>
         <footer>

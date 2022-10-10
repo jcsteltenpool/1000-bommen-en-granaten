@@ -1,9 +1,15 @@
 // Colors
 const black = ("rgb(000, 000, 000)");
-const grey = ("rgb(193, 193, 193");
-const lightBlue = ("rgb(155, 219, 253)");
-const minusPink = ("rgb(255, 120, 120)");
-const gold = ("rgb(255, 215, 0)");
+const white = ("rgb(255, 255, 255");
+const lightBlue = "radial-gradient(rgb(135, 206, 250), transparent 60%)";
+// "linear-gradient(-45deg, rgb(135, 206, 250), rgb(255, 255, 255) 25%, rgb(135, 206, 250))";
+const red = "radial-gradient(rgb(255, 0, 0), transparent 60%)";
+// "linear-gradient(-45deg, rgb(255, 0, 0), rgb(255, 120, 120) 25%, rgb(255, 0, 0))";
+const gold = "radial-gradient(rgb(255, 215, 0), transparent 60%)";
+// "linear-gradient(-45deg, rgb(218, 165, 32), rgb(255, 215, 0) 25%, rgb(218, 165, 32))"
+
+// const gold = ("rgb(255, 215, 0)");
+// const goldenRod = ("rgb(218, 165, 32)");
 
 // Unlock players
 const unlockPlayer1 = document.querySelector("#unlockPlayer1");
@@ -20,7 +26,7 @@ unlockPlayer2.addEventListener('click', function() {
     buttonTextChange(1);
 });
 unlockPlayer3.addEventListener('click', function() {
-    unlockPlayer(2);
+    unlockPlayer(2);    
     buttonTextChange(2);
 });
 unlockPlayer4.addEventListener('click', function() {
@@ -28,11 +34,24 @@ unlockPlayer4.addEventListener('click', function() {
     buttonTextChange(3);
 });
 
+let pirateNames = ["Zwart&shy;baard", "Piet Piraat", "Aadje Piraatje", "Jack Sparrow", "Piraten&shy;prinses", "Kapitein Haddock"];
+
+function giveRandomName() {
+    let randomPirateName = Math.floor(Math.random() * pirateNames.length);
+    return pirateNames[randomPirateName];
+};
+
 function unlockPlayer(i) {
     // (Re)name a player
     let namePlayer = document.getElementsByClassName("namePlayer")[i];
     let playerNameInput = document.getElementsByClassName("playerNameInput")[i].value;
-    namePlayer.innerHTML = playerNameInput;
+    if (playerNameInput === "") {
+        namePlayer.innerHTML = giveRandomName();
+    } else {
+        namePlayer.innerHTML = playerNameInput;
+    };
+    
+    // namePlayer.innerHTML = playerNameInput;
     namePlayer.style.color = black;
 
     // Enable column and buttons
@@ -40,7 +59,7 @@ function unlockPlayer(i) {
     headerPlayer.style.color = black;
 
     let scorePlayer = document.getElementsByClassName("scorePlayer")[i];
-    scorePlayer.style.backgroundColor = lightBlue;
+    scorePlayer.style.background = lightBlue ;
     scorePlayer.style.color = black;
     
     let plus100 = document.getElementsByClassName("plus100")[i];
@@ -54,7 +73,7 @@ function unlockPlayer(i) {
     });
 };
 
-let newButtonTexts = ["Aaarghh!", "Schip ahoy!", "Yo ho ho!", "Enteren!", "Ahoy!"]
+let newButtonTexts = ["Aaarghh!", "Yo ho ho!", "Enteren!", "Ahoy!"];
 
 function textSelector() {
     let randomText = Math.floor(Math.random() * newButtonTexts.length);
@@ -167,16 +186,16 @@ function changeScore(i, n) {
     scorePlayer.value = updatedScore;
 
     if (updatedScore >= 6000) {
-        scorePlayer.style.backgroundColor = gold;
+        scorePlayer.style.background = gold;
     } else if (updatedScore >= 0 && updatedScore < 6000) {
-        scorePlayer.style.backgroundColor = lightBlue;
+        scorePlayer.style.background = lightBlue;
     } else if (updatedScore < 0) {
-        scorePlayer.style.backgroundColor = minusPink;
+        scorePlayer.style.background = red;
     };
 }
  
 // Reset button
-const resetButton = document.querySelector("#reset");
+const resetButton = document.querySelector("#resetButton");
 resetButton.addEventListener('click', resetGame);
 
 function resetGame() {
@@ -184,8 +203,19 @@ function resetGame() {
     allPlayers.forEach((scorePlayer) => {
         if (!scorePlayer.disabled) {
             scorePlayer.value = 0;
-            scorePlayer.style.backgroundColor = lightBlue;
+            scorePlayer.style.background = lightBlue;
         };
     });
     resetButton.setAttribute('disabled', true);
 };
+
+// let inputPlayer3 = document.getElementById("inputPlayer3");
+// let columnPlayer3 = document.querySelector(".player3");
+// inputPlayer3.style.display = "none";
+// columnPlayer3.style.display = "none";
+
+// let inputPlayer4 = document.getElementById("inputPlayer4");
+// let columnPlayer4 = document.querySelector(".player4");
+// inputPlayer4.style.display = "none";
+// columnPlayer4.style.display = "none";
+
