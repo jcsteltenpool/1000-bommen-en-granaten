@@ -30,26 +30,6 @@ h3, p {
     white-space: nowrap;
 }
 
-.heading-fontsize-3players {
-    font-size: clamp(1rem, 4vw, 1.2rem);
-}
-
-.heading-fontsize-4players {
-    font-size: clamp(0.8rem, 3.5vw, 1rem);
-}
-
-.score-fontsize-2players {
-    font-size: 2rem;
-}
-
-.score-fontsize-3players {
-    font-size: min(7vw, 2rem);
-}
-
-.score-fontsize-4players {
-    font-size: min(5.5vw, 2rem);
-}
-
 input {
     border-style: none;
     border: 1px solid goldenrod;
@@ -57,7 +37,7 @@ input {
     padding: 10px;
     border-radius: 5px;
 }
-   
+
 button {
     margin: 5px;
     border-radius: 5px;
@@ -79,6 +59,27 @@ button {
     background: rgb(193, 193, 193);
 }
 
+/* Adjustments with 3 or 4 players */
+.heading-fontsize-3players {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+}
+
+.heading-fontsize-4players {
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
+}
+
+.score-fontsize-2players {
+    font-size: 2rem;
+}
+
+.score-fontsize-3players {
+    font-size: min(7vw, 2rem);
+}
+
+.score-fontsize-4players {
+    font-size: min(5.5vw, 2rem);
+}
+
 /* Header */
 .bombsLogo {
     width: min(432px, 70%);
@@ -93,19 +94,34 @@ button {
     gap: .8rem;
 }
 
-.join {
+.unlockPlayers-container div {
+    white-space: nowrap;
+}
+
+.playerNameInput {
+    width: clamp(6rem, 25vw, 11rem);
+}
+
+.join,
+.add-player-button {
     background-color: rgb(255, 235, 121);
     color: black;
     border: 1px solid gold;
-    width: 110px;
 }
 
-.join:hover {
+.join {
+    width: clamp(5.25rem, 25vw, 7rem);
+    white-space: nowrap;
+}
+
+.join:hover,
+.add-player-button:hover {
     background: linear-gradient(-45deg, gold, rgb(255, 235, 121) 25%, gold);
     color: black;
 }
 
-.join:active {
+.join:active,
+.add-player-button:active {
     transform: scale(0.98);
 }
 
@@ -115,21 +131,50 @@ button {
     padding: 6px;
 }
 
-@media only screen and (max-width: 345px) {
-    .playerNameInput,
-    .join {
-        font-size: 0.8rem;
+.button-container,
+.reset-container,
+.scorePlayer {
+    padding: 0.8rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .bombsLogo {
+        margin-top: 1rem;
     }
 
+    h3, p {
+        padding: 0.8rem 0.2rem;
+    }
+
+    .playerNameInput, .join {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+    }
+
+    .unlockPlayers-container {
+        gap: 0.5rem;
+    }
+    
+    .button-container {
+        padding: 0.2rem;
+    }
+
+    .button-container:last-child,
+    .reset-container {
+        padding: 0.6rem;
+    }
+}
+
+@media only screen and (max-width: 345px) {
     .unlockPlayers-container {
         gap: 0.3rem;
     }
 }
 
 @media only screen and (hover: none) {
-    .join {
+    .join,
+    .add-player-button {
         background: linear-gradient(-45deg, gold, rgb(255, 235, 121) 25%, gold);
-    }
+    } 
 }
 
 /* Scoreboard */
@@ -158,35 +203,16 @@ button {
 .scorePlayer {
     border: none;
     text-align: center;
-    padding: 15px;
     margin: 0;
     background: radial-gradient(rgb(193, 193, 193), transparent 60%);
     width: 100%;
     box-sizing: border-box;
 }
 
+
+
 .reset-container {
     border-top: 2px solid goldenrod;
-}
-.button-container,
-.reset-container {
-    padding: 0.8rem;
-}
-
-@media only screen and (max-width: 500px) {
-    .bombsLogo {
-        margin-top: 1rem;
-    }
-    .button-container {
-        padding: 0.2rem;
-    }
-    .button-container:last-child {
-        padding: 0.6rem;
-    }
-
-    h3, p {
-        padding: 1rem 0.2rem;
-    }
 }
 
 .namePlayer {
@@ -261,9 +287,6 @@ input[type=number]::-webkit-inner-spin-button {
 
 .reset-container {
     grid-column: span 4;
-}
-.reset-row {
-    border-top: 2px solid goldenrod;
 }
 
 #resetButton[disabled] {
