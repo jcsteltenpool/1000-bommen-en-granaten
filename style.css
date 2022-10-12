@@ -101,7 +101,7 @@ button {
 }
 
 .join:hover {
-    background: linear-gradient(-45deg, goldenrod, gold 25%, goldenrod);
+    background: linear-gradient(-45deg, gold, rgb(255, 235, 121) 25%, gold);
     color: black;
 }
 
@@ -128,7 +128,7 @@ button {
 
 @media only screen and (hover: none) {
     .join {
-        background: linear-gradient(-45deg, goldenrod, gold 25%, goldenrod);
+        background: linear-gradient(-45deg, gold, rgb(255, 235, 121) 25%, gold);
     }
 }
 
@@ -257,8 +257,6 @@ input[type=number]::-webkit-inner-spin-button {
     transform: scale(0.98);
 }
 
-
-
 /* Reset button */
 
 .reset-container {
@@ -286,7 +284,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 #resetButton:hover {
-    background: linear-gradient(-45deg, rgb(114, 114, 114), rgb(193, 193, 193) 25%, rgb(114, 114, 114));
+    background: linear-gradient(-45deg, rgb(114, 114, 114), rgb(150, 150, 150) 25%, rgb(114, 114, 114));
 }
 #resetButton:active {
     transform: scale(0.99);
@@ -316,7 +314,7 @@ input[type=number]::-webkit-inner-spin-button {
     }
 
     #resetButton {
-        background: linear-gradient(-45deg, rgb(114, 114, 114), rgb(193, 193, 193) 25%, rgb(114, 114, 114));
+        background: linear-gradient(-45deg, rgb(114, 114, 114), rgb(150, 150, 150) 25%, rgb(114, 114, 114));
     }
 }
 
