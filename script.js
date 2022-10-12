@@ -2,14 +2,8 @@
 const black = ("rgb(000, 000, 000)");
 const white = ("rgb(255, 255, 255");
 const lightBlue = "radial-gradient(rgb(135, 206, 250), transparent 60%)";
-// "linear-gradient(-45deg, rgb(135, 206, 250), rgb(255, 255, 255) 25%, rgb(135, 206, 250))";
 const red = "radial-gradient(rgb(255, 0, 0), transparent 60%)";
-// "linear-gradient(-45deg, rgb(255, 0, 0), rgb(255, 120, 120) 25%, rgb(255, 0, 0))";
 const gold = "radial-gradient(rgb(255, 215, 0), transparent 60%)";
-// "linear-gradient(-45deg, rgb(218, 165, 32), rgb(255, 215, 0) 25%, rgb(218, 165, 32))"
-
-// const gold = ("rgb(255, 215, 0)");
-// const goldenRod = ("rgb(218, 165, 32)");
 
 // Unlock players
 const unlockPlayer1 = document.querySelector("#unlockPlayer1");
@@ -34,7 +28,7 @@ unlockPlayer4.addEventListener('click', function() {
     buttonTextChange(3);
 });
 
-let pirateNames = ["Zwart&shy;baard", "Piet Piraat", "Aadje Piraatje", "Jack Sparrow", "Piraten&shy;prinses", "Kapitein Haddock"];
+let pirateNames = ["Zwartbaard", "Piet", "Aadje", "Sparrow", "Haddock"];
 
 function giveRandomName() {
     let randomPirateName = Math.floor(Math.random() * pirateNames.length);
@@ -209,13 +203,54 @@ function resetGame() {
     resetButton.setAttribute('disabled', true);
 };
 
-// let inputPlayer3 = document.getElementById("inputPlayer3");
-// let columnPlayer3 = document.querySelector(".player3");
-// inputPlayer3.style.display = "none";
-// columnPlayer3.style.display = "none";
+// Hide & reveal column 3 and 4
+let inputPlayer3 = document.getElementById("inputPlayer3");
+let columnPlayer3 = document.getElementById("columnPlayer3");
+let addPlayer3 = document.getElementById("addPlayer3");
+let addPlayer4 = document.getElementById("addPlayer4");
+let scorePlayer = document.querySelectorAll("input.scorePlayer");
+let h3 = document.querySelectorAll("h3");
+let p = document.querySelectorAll("p");
 
-// let inputPlayer4 = document.getElementById("inputPlayer4");
-// let columnPlayer4 = document.querySelector(".player4");
-// inputPlayer4.style.display = "none";
-// columnPlayer4.style.display = "none";
+inputPlayer3.hidden = true;
+columnPlayer3.hidden = true;
+addPlayer4.hidden = true;
+
+let inputPlayer4 = document.getElementById("inputPlayer4");
+let columnPlayer4 = document.getElementById("columnPlayer4");
+
+inputPlayer4.hidden = true;
+columnPlayer4.hidden = true;
+
+function revealPlayer3() {
+    inputPlayer3.hidden = false;
+    columnPlayer3.hidden = false;
+    addPlayer3.hidden = true;
+    addPlayer4.hidden = false;
+    h3.forEach((el) => {
+        el.classList.add("heading-fontsize-3players");
+    });
+    scorePlayer.forEach((score) => {
+        score.classList.replace("score-fontsize-2players", "score-fontsize-3players");
+    });
+};
+
+function revealPlayer4() {
+    inputPlayer4.hidden = false;
+    columnPlayer4.hidden = false;
+    addPlayer4.hidden = true;
+    h3.forEach((el) => {
+        el.classList.replace("heading-fontsize-3players", "heading-fontsize-4players");
+    });
+    p.forEach((el) => {
+        el.classList.add("heading-fontsize-4players");
+    });
+    scorePlayer.forEach((score) => {
+        score.classList.replace("score-fontsize-3players", "score-fontsize-4players");
+    });
+};
+
+addPlayer3.addEventListener('click', revealPlayer3);
+addPlayer4.addEventListener('click', revealPlayer4);
+
 
