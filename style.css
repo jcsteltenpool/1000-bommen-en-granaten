@@ -91,6 +91,7 @@ button {
 /* Header */
 .bombsLogo {
     width: min(432px, 70%);
+    animation: rocking 10s linear infinite alternate;
 }
 
 /* Subscription area */
@@ -365,22 +366,47 @@ footer span {
     padding: 1.5rem;
 }
 
-/* Transformations */
+/* Animations */
+@keyframes rocking {
+    0% {
+        rotate: -3deg;
+    }
+    50% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 3deg;
+    }
+  }
 
 @keyframes bounceIn {
     0% {
       transform: scale(0.8);
-      color: rgb(114, 114, 114);
+      filter: grayscale(100%)
     }
     60% {
       transform: scale(1.4);
-      color: black;
     }
     100% {
       transform: scale(1);
+      filter: grayscale(0%)
     }
   }
 
   .bounceIn {
    animation: bounceIn 2s; 
   }
+
+  @keyframes enabled {
+    0% {
+        filter: grayscale(100%);
+    }
+    100% {
+        filter: grayscale(0%);
+    }
+  }
+  
+  .enabled {
+    animation: enabled 2s ease-out;
+  }
+

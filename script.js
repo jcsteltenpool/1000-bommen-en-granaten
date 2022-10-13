@@ -53,11 +53,11 @@ function unlockPlayer(i) {
 
     // Enable column and buttons
     let headerPlayer = document.getElementsByClassName("headerPlayer")[i];
-    headerPlayer.classList.remove("disabled");
+    headerPlayer.classList.replace("disabled", "enabled");
 
     let scorePlayer = document.getElementsByClassName("scorePlayer")[i];
     scorePlayer.style.background = lightBlue ;
-    scorePlayer.classList.remove("disabled");
+    scorePlayer.classList.replace("disabled", "enabled");
     
     let plus100 = document.getElementsByClassName("plus100")[i];
     let min100 = document.getElementsByClassName("min100")[i];
@@ -67,6 +67,7 @@ function unlockPlayer(i) {
     const allButtons = [scorePlayer, plus100, min100, plus1000, min1000, bonus];
     allButtons.forEach((button) => {
         button.removeAttribute('disabled');
+        button.classList.add('enabled');
     });
 };
 
