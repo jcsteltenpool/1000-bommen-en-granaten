@@ -209,11 +209,15 @@ function resetGame() {
 // Hide & reveal column 3 and 4
 let inputPlayer1 = document.getElementById("inputPlayer1");
 let inputPlayer2 = document.getElementById("inputPlayer2");
-
 let inputPlayer3 = document.getElementById("inputPlayer3");
+let inputPlayer4 = document.getElementById("inputPlayer4");
+
 let columnPlayer3 = document.getElementById("columnPlayer3");
+let columnPlayer4 = document.getElementById("columnPlayer4");
+
 let addPlayer3 = document.getElementById("addPlayer3");
 let addPlayer4 = document.getElementById("addPlayer4");
+
 let scorePlayer = document.querySelectorAll("input.scorePlayer");
 let h3 = document.querySelectorAll("h3");
 let p = document.querySelectorAll("p");
@@ -221,17 +225,15 @@ let p = document.querySelectorAll("p");
 let showInputContainer = document.getElementById("showInputContainer");
 let hideInputContainer = document.getElementById("hideInputContainer")
 
+// Starting point
 inputPlayer3.hidden = true;
 columnPlayer3.hidden = true;
+inputPlayer4.hidden = true;
+columnPlayer4.hidden = true;
+
 addPlayer4.hidden = true;
 showInputContainer.hidden = true;
 hideInputContainer.hidden = true;
-
-let inputPlayer4 = document.getElementById("inputPlayer4");
-let columnPlayer4 = document.getElementById("columnPlayer4");
-
-inputPlayer4.hidden = true;
-columnPlayer4.hidden = true;
 
 function revealPlayer3() {
     inputPlayer3.hidden = false;
@@ -268,7 +270,6 @@ addPlayer4.addEventListener('click', revealPlayer4);
 // Hide & show all inputs
 showInputContainer.addEventListener('click', showAllInputs);
 hideInputContainer.addEventListener('click', hideAllInputs);
-
 
 function hideAllInputs() {
     inputPlayer1.hidden = true;
