@@ -15,26 +15,36 @@
         </header>
   
         <section class="unlockPlayers-container">
-            <div>
+            <div id="inputPlayer1">
                 <input class="playerNameInput" type="text" placeholder="Speler 1">
                 <button id="unlockPlayer1" class="join" type="submit">Speel mee!</button>
             </div>
-            <div>
+            <div id="inputPlayer2">
                 <input class="playerNameInput" type="text" placeholder="Speler 2">
-                <button id="unlockPlayer2" class="join" type="submit">Speel mee!</button>
+                <a href="#scoreboard">
+                    <button id="unlockPlayer2" class="join" type="submit">Speel mee!</button>
+                </a>
             </div>
             <div id="inputPlayer3">
                 <input class="playerNameInput" type="text" placeholder="Speler 3">
-                <button id="unlockPlayer3" class="join" type="submit">Speel mee!</button>
+                <a href="#scoreboard">
+                    <button id="unlockPlayer3" class="join" type="submit">Speel mee!</button>
+                </a>            
             </div>
             <div id="inputPlayer4">
                 <input class="playerNameInput" type="text" placeholder="Speler 4">
-                <button id="unlockPlayer4" class="join" type="submit">Speel mee!</button>
+                <a href="#scoreboard">
+                    <button id="unlockPlayer4" class="join" type="submit">Speel mee!</button>
+                </a>
             </div>
             <button id="addPlayer3" class="add-player-button">Derde speler toevoegen</button>
             <button id="addPlayer4" class="add-player-button">Vierde speler toevoegen</button>
+            <button id="showInputContainer" class="add-player-button">Invoervelden tonen</button>
+            <button id="hideInputContainer" class="add-player-button">Invoervelden verbergen</button>
+
         </section>
 
+        <!-- <a class="anchor" id="scoreboard"></a> -->
         <section class="scoreboard-container">
             <div class="score-grid">
                 <div id="columnPlayer1" class="player-container">

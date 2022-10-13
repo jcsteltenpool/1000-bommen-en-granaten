@@ -45,16 +45,19 @@ function unlockPlayer(i) {
         namePlayer.innerHTML = playerNameInput;
     };
     
-    // namePlayer.innerHTML = playerNameInput;
-    namePlayer.style.color = black;
+    namePlayer.classList.remove("disabled");
+    namePlayer.classList.add("bounceIn");
+    setTimeout(() => {
+        namePlayer.classList.remove("bounceIn");
+    }, 2500);
 
     // Enable column and buttons
     let headerPlayer = document.getElementsByClassName("headerPlayer")[i];
-    headerPlayer.style.color = black;
+    headerPlayer.classList.remove("disabled");
 
     let scorePlayer = document.getElementsByClassName("scorePlayer")[i];
     scorePlayer.style.background = lightBlue ;
-    scorePlayer.style.color = black;
+    scorePlayer.classList.remove("disabled");
     
     let plus100 = document.getElementsByClassName("plus100")[i];
     let min100 = document.getElementsByClassName("min100")[i];
@@ -204,6 +207,9 @@ function resetGame() {
 };
 
 // Hide & reveal column 3 and 4
+let inputPlayer1 = document.getElementById("inputPlayer1");
+let inputPlayer2 = document.getElementById("inputPlayer2");
+
 let inputPlayer3 = document.getElementById("inputPlayer3");
 let columnPlayer3 = document.getElementById("columnPlayer3");
 let addPlayer3 = document.getElementById("addPlayer3");
@@ -212,9 +218,14 @@ let scorePlayer = document.querySelectorAll("input.scorePlayer");
 let h3 = document.querySelectorAll("h3");
 let p = document.querySelectorAll("p");
 
+let showInputContainer = document.getElementById("showInputContainer");
+let hideInputContainer = document.getElementById("hideInputContainer")
+
 inputPlayer3.hidden = true;
 columnPlayer3.hidden = true;
 addPlayer4.hidden = true;
+showInputContainer.hidden = true;
+hideInputContainer.hidden = true;
 
 let inputPlayer4 = document.getElementById("inputPlayer4");
 let columnPlayer4 = document.getElementById("columnPlayer4");
@@ -239,6 +250,7 @@ function revealPlayer4() {
     inputPlayer4.hidden = false;
     columnPlayer4.hidden = false;
     addPlayer4.hidden = true;
+    hideInputContainer.hidden = false;
     h3.forEach((el) => {
         el.classList.replace("heading-fontsize-3players", "heading-fontsize-4players");
     });
@@ -253,4 +265,26 @@ function revealPlayer4() {
 addPlayer3.addEventListener('click', revealPlayer3);
 addPlayer4.addEventListener('click', revealPlayer4);
 
+// Hide & show all inputs
+showInputContainer.addEventListener('click', showAllInputs);
+hideInputContainer.addEventListener('click', hideAllInputs);
+
+
+function hideAllInputs() {
+    inputPlayer1.hidden = true;
+    inputPlayer2.hidden = true;
+    inputPlayer3.hidden = true;
+    inputPlayer4.hidden = true;
+    showInputContainer.hidden = false;
+    hideInputContainer.hidden = true;
+}
+
+function showAllInputs() {
+    inputPlayer1.hidden = false;
+    inputPlayer2.hidden = false;
+    inputPlayer3.hidden = false;
+    inputPlayer4.hidden = false;
+    showInputContainer.hidden = true;
+    hideInputContainer.hidden = false;
+}
 
