@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 // Colors
 const black = ("rgb(000, 000, 000)");
 const white = ("rgb(255, 255, 255");
@@ -290,3 +292,4 @@ function showAllInputs() {
     hideInputContainer.hidden = false;
 }
 
+});

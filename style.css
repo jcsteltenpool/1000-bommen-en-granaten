@@ -231,9 +231,17 @@ button {
     text-overflow: ellipsis;
 }
 
-input[type=number]::-webkit-inner-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
+
+input[type=number] {
+    -moz-appearance: textfield;
+ }
 
 .score input {
     border: none;
@@ -246,6 +254,7 @@ input[type=number]::-webkit-inner-spin-button {
     box-sizing: border-box;
 }
 
+*:disabled,
 .disabled {
     color: rgb(114, 114, 114);
 }
